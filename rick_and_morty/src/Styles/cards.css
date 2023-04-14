@@ -1,0 +1,8 @@
+.cards-conteiner {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 2em 0em
+}

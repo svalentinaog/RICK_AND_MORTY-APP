@@ -1,0 +1,91 @@
+body {
+  background-image: url(../../public/rick-y-morty-en-el-espacio.jpg);
+  background-size: cover;
+}
+
+h1 {
+  margin: 15px;
+  text-align: center;
+  font-weight: 500;
+  color: black;
+}
+
+.login {
+  display: grid;
+  gap: 20px; /*Espaciado entre cada elemento, (sentido vertical) */
+}
+/* 👆👆👆👆👆❌REEMPLAZAR GRID DESPUES */
+
+.login_label {
+  display: block; /*Para que abarque el 100% de la pagina*/
+  font-weight: 400; /*Para una fuente en negrita*/
+  padding: 10px;
+  cursor: pointer;
+}
+
+.login_grupo-input {
+  position: relative; /*Para que el grupo (icono y input) tenga un posicionamiento relativo*/
+}
+
+.login_input {
+  box-sizing: border-box;
+  width: calc(
+    100% - 0px
+  ); /*Para que abarque todo el espacio disponible de forma calculada*/
+  height: 45px;
+  line-height: 45px;
+  background: #79df9f;
+  border: 3px solid transparent;
+  border-radius: 3px;
+  padding: 0 40px 0 10px;
+  transition: 0.3s ease all; /*Transicion de .3 segundos con una funcion de tiempo ease para todas las propiedades*/
+}
+
+.login_input:focus {
+  border: 3px solid #3faf68;
+  background: #3faf68;
+  outline: none;
+  box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+#email,
+#password {
+  padding-left: 13%; /*Espacio en el texto de la caja*/
+}
+
+/* Estilos de la etiqueta main que contiene al formulario */
+main {
+  max-width: 400px;
+  width: 90%;
+  margin-top: 14%;
+  margin-left: 65%;
+  padding: 40px;
+  background: #4ace7b;
+  border-radius: 6px 6px;
+}
+
+/*Estilos del botón Submit/Login*/
+.submit_btn {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  font-size: 15px;
+  background: #000;
+  color: #f1f1f1;
+  font-weight: 400; /*Para una fuente en negrita*/
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.1s ease all;
+}
+
+/* -------------------------------------------------------------- ICONOS ------------------------------------------------------------  */
+/*Icono User y Password*/
+.login_icons_user-y-password {
+  position: absolute;
+  left: 10px;
+  bottom: 15px;
+  z-index: 100;
+  font-size: 20px;
+  opacity: 6;
+}

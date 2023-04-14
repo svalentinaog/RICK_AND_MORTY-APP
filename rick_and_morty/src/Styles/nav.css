@@ -1,0 +1,86 @@
+/*Estilos del boton Agregar*/
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.primary-btn {
+  background-color: #4eacac;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 0 4px 4px 0px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+/* Input => Agregar */
+.input-btn {
+  background-color: #65b6b1;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px 0px 0px 4px;
+}
+
+.input-btn:focus {
+  border: none;
+  background: #ffffff;
+  color: #40454b;
+  outline: none; /* que es ?*/
+  box-shadow: 3px 0px 30px rgba(45, 54, 110, 0.4);
+}
+
+/*Estilos del boton Agregar personaje ramdon*/
+.secondary-btn {
+  /* height: 45px;
+	line-height: 45px; 
+	width: 30%;*/
+  background: white;
+  color: #4caf50;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #4caf50;
+  cursor: pointer;
+  transition: 0.1s ease all;
+}
+
+.secondary-btn:hover {
+  box-shadow: 1px 1px 20px 1px rgb(0, 159, 27, 0.5);
+}
+
+/* Clase integrada en la etq nav */
+.container-buttons {
+  background-color: #4caf50;
+  padding: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ABOUT - HOME */
+.about-btn {
+  background: white;
+  color: #4caf50;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #4caf50;
+  cursor: pointer;
+  transition: 0.1s ease all;
+}
+.home-btn {
+  background: white;
+  color: #4caf50;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #4caf50;
+  cursor: pointer;
+  transition: 0.1s ease all;
+}
+.log-out {
+  background: white;
+  color: #4caf50;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #4caf50;
+  cursor: pointer;
+  transition: 0.1s ease all;
+}
