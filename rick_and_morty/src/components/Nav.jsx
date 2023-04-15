@@ -9,10 +9,10 @@ export default function Nav({ onSearch, setAccess }) {
   return (
     <nav>
       <div>
-        <Link to="/about" className="about-btn"> ABOUT </Link>
-        <Link to="/home" className="home-btn"> HOME </Link>
+        <Link to="/about" className="about-btn"> About </Link>
+        <Link to="/home" className="home-btn"> Home </Link>
         <Link to="/favorites"> Favorites </Link>
-        <button className="log-out" onClick={handleLogOut}>LOG OUT</button>
+        <button className="log-out" onClick={handleLogOut}>Log Out</button>
 
       </div>
       <SearchBar onSearch={onSearch} />

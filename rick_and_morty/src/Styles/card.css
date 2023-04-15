@@ -1,27 +1,24 @@
 .card {
   background: rgb(60, 62, 68);
-  /* Arriba | Derecha | Abajo | Izquierda */
-  /* margin: 20% 0 20% auto; */
   width: 20%;
-  /* card-box */
   border-radius: 5px;
   padding: 1em 0em;
   box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.2);
-  transition: all .5s ease-in;  /*  TRANSICION PARA TODO CAMBIO DE ESTILOS DE 0.5 Segundos */
+  transition: all 0.5s ease-in; /*  TRANSICION PARA TODO CAMBIO DE ESTILOS DE 0.5 Segundos */
 }
+/* card-box */
+/* Arriba | Derecha | Abajo | Izquierda */
+/* margin: 20% 0 20% auto; */
 
 /* cards-text */
 h2 {
-  font-family: 'Raleway';
   font-size: 17px;
-  color: white;
 }
 
 .close-button {
   background-color: transparent;
   box-shadow: none;
   border: none;
-  
 }
 
 .close-button-container {
@@ -40,15 +37,15 @@ img {
 }
 
 .color-primary {
-  color:rgb(191, 222, 66)
+  color: rgb(191, 222, 66);
 }
 
 .color-secundary {
-  color:rgb(66, 180, 202)
+  color: rgb(66, 180, 202);
 }
 
 .color-death {
-  color:#a12312;
+  color: #a12312;
 }
 
 .color-alive {

@@ -16,16 +16,17 @@ export default function SearchBar({ onSearch }) {
 
   return (
     /* Cuando el usuario ingresa un ID de personaje y hace clic en el botón "Agregar", la función onSearch hace una solicitud a la API de Rick and Morty para obtener los detalles del personaje correspondiente y lo agrega a la lista de personajes que se están mostrando en pantalla. */
-    <nav className="container-buttons">
+    <nav className="buttonContainer">
       <input
-        className="input-btn"
+        className="inputAdd-btn"
         type="search"
+        placeholder="Id"
         onChange={handleChange}
         value={id}
       />
 
       <button
-        className="primary-btn"
+        className="add-btn"
         onClick={() => {
           if (id.trim() === "") {
             alert("No puedes enviar una entrada vacía");
@@ -39,12 +40,16 @@ export default function SearchBar({ onSearch }) {
           }
         }}
       >
-        Agregar
+        Add
       </button>
 
       {/* Ejercicio EXTRA 👇 */}
-      <button className="secondary-btn" onClick={addRandomCharacter}>
-        Agregar personaje random
+      <button
+        className="addRandom-btn"
+        style={{ backgroundColor: "black" }}
+        onClick={addRandomCharacter}
+      >
+        Add Random
       </button>
     </nav>
   );

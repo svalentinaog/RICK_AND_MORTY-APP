@@ -3,7 +3,10 @@
   font-family: "Poppins", sans-serif;
 }
 
-.primary-btn {
+
+/* ------------------------------------------- BUTTONS E INPUTS --------------------------------------------------- */
+
+.add-btn {
   background-color: #4eacac;
   color: white;
   border: none;
@@ -14,7 +17,7 @@
 }
 
 /* Input => Agregar */
-.input-btn {
+.inputAdd-btn {
   background-color: #65b6b1;
   color: white;
   border: none;
@@ -22,7 +25,7 @@
   border-radius: 4px 0px 0px 4px;
 }
 
-.input-btn:focus {
+.inputAdd-btn:focus {
   border: none;
   background: #ffffff;
   color: #40454b;
@@ -30,13 +33,10 @@
   box-shadow: 3px 0px 30px rgba(45, 54, 110, 0.4);
 }
 
-/*Estilos del boton Agregar personaje ramdon*/
-.secondary-btn {
-  /* height: 45px;
-	line-height: 45px; 
-	width: 30%;*/
-  background: white;
-  color: #4caf50;
+/* Input => Agregar personaje ramdon*/
+.addRandom-btn {
+  color: white;
+  background-color: #333;
   padding: 8px 16px;
   border-radius: 4px;
   border: 1px solid #4caf50;
@@ -44,13 +44,11 @@
   transition: 0.1s ease all;
 }
 
-.secondary-btn:hover {
-  box-shadow: 1px 1px 20px 1px rgb(0, 159, 27, 0.5);
-}
+/* .addRandom-btn:hover {
+} */
 
 /* Clase integrada en la etq nav */
-.container-buttons {
-  background-color: #4caf50;
+.buttonContainer {
   padding: 12px;
   display: flex;
   justify-content: flex-end;
@@ -58,24 +56,22 @@
 
 /* ABOUT - HOME */
 .about-btn {
-  background: white;
-  color: #4caf50;
+  color: white;
   padding: 8px 16px;
   border-radius: 4px;
-  border: 1px solid #4caf50;
+  border: none;
   cursor: pointer;
   transition: 0.1s ease all;
 }
 .home-btn {
-  background: white;
-  color: #4caf50;
+  color: white;
   padding: 8px 16px;
   border-radius: 4px;
-  border: 1px solid #4caf50;
+  border: none;
   cursor: pointer;
   transition: 0.1s ease all;
 }
-.log-out {
+/* .log-out {
   background: white;
   color: #4caf50;
   padding: 8px 16px;
@@ -83,4 +79,47 @@
   border: 1px solid #4caf50;
   cursor: pointer;
   transition: 0.1s ease all;
+} */
+
+
+
+/* ------------------------------------------- NAVBAR --------------------------------------------------- */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+}
+
+nav div a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+nav div a:hover {
+  text-decoration: underline;
+}
+
+.log-out {
+  background-color: #dc3545;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: 0.1s ease all;
+}
+
+.log-out:hover {
+  background-color: #c82333;
+  cursor: pointer;
 }

@@ -32,10 +32,9 @@ export default function Form({ login }) {
   };
 
   return (
-    // 👇 Una etiqueta form que envolverá a todo el componente.
     <main>
-      <h1>Sign In</h1>
       <form onSubmit={handleSubmit} className="login">
+        <h1 className="titleSignIn">Sign In</h1>
         <div>
           {/* 👇 Una etiqueta label junto con un input para el email. */}
           <label
@@ -92,7 +91,6 @@ export default function Form({ login }) {
 
         {errors.password && <p style={{ color: "red" }}>{errors.password}</p>}
 
-        {/* 👇 Un button con el texto "Submit". */}
         <button className="submit_btn">Submit</button>
       </form>
     </main>

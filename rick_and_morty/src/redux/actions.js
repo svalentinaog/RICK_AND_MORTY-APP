@@ -1,4 +1,4 @@
-import { ADD_FAV, REMOVE_FAV, FILTER, } from "./actions-types";
+import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./actions-types";
 
 export const addFav = (character) => {
   return { type: ADD_FAV, payload: character };
