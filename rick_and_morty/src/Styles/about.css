@@ -1,5 +1,29 @@
-/* h1, p {
+.aboutContainer {
+  width: 100%;
+}
+
+.aboutTitle {
   font-family: "Raleway";
-  font-size: 50px;
+  font-size: 60px;
   color: white;
-} */
+  text-align: left;
+}
+
+.aboutSub {
+  font-family: "Raleway";
+  font-size: 40px;
+  color: white;
+  text-align: left;
+}
+
+.aboutParagraph {
+  font-size: 17px;
+  color: white;
+  text-align: left;
+}
+
+.aboutBox {
+  /* Arriba | Derecha | Abajo | Izquierda */
+
+  margin: 3%;
+}

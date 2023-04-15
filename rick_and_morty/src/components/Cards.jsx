@@ -1,11 +1,12 @@
 import "../Styles/cards.css"; // Estilos del componente Cards.
 import Card from "./Card";
 
-export default function Cards({ characters, onClose }) {
+// Cards es un componente de nivel superior que se encarga de renderizar una lista de personajes
+export default function Cards({ characters, onClose }) { // Array de objetos, fn onClose
   return (
     <div className="cards-conteiner">
-      {
-        characters.map(({ id, name, status, species, gender, origin, image }) => {
+      { // iteración sobre el array y por cada objeto de personaje, se renderiza un componente Card. 
+        characters.map(({ id, name, status, species, gender, origin, image }) => { // Destructuración de cada objeto(personaje) de characters, para extraer las propiedades especificas.
             return (
               <Card
                 key={id}

@@ -35,7 +35,7 @@ function App() {
     }
   };
 
-  // La función useEffect comprueba el estado de acceso y utiliza la función navigate para redirigir al usuario a la página de inicio si el estado de acceso es falso.
+  // La función useEffect (hook) comprueba el estado de acceso y utiliza la función navigate para redirigir al usuario a la página de inicio si el estado de acceso es falso. (efectos secundarios)
   useEffect(() => {
     !access && navigate("/");
   }, [access]);
@@ -65,12 +65,10 @@ function App() {
 
   // La función onClose filtra la lista de personajes del estado de la aplicación para eliminar el personaje seleccionado.
   const onClose = (id) => {
-    console.log(id)
-
     const filteredCharacters = characters.filter(
       (character) => Number(character.id) !== Number(id)
     );
-    console.log(filteredCharacters)
+    // Number(character.id) se utiliza para convertir el valor del id del personaje en un número antes de hacer la comparación con Number(id), que también se convierte en número. De esta manera, se asegura que se están comparando valores numéricos y no cadenas de texto, es una buena práctica asegurarse de que los tipos de datos sean los mismos antes de realizar comparaciones, para evitar errores inesperados
 
     setCharacters(filteredCharacters);
   };
@@ -87,7 +85,7 @@ function App() {
       {/* Routes envuelve las rutas de la aplicación, para que se renderice el componente correspondiente 
       a la ruta que se está visitando */}
       <Routes>
-      {/* Route representa una ruta de la aplicación. Su propiedad "path" define la ruta en la URL y "element" define el componente que se renderizará cuando la ruta especificada en "path" sea visitada. */}
+        {/* Route representa una ruta de la aplicación. Su propiedad "path" define la ruta en la URL y "element" define el componente que se renderizará cuando la ruta especificada en "path" sea visitada. */}
         <Route path="/" element={<Form login={login} />} />
         <Route
           path="/home"
@@ -105,3 +103,8 @@ function App() {
 export default App;
 
 // Finalmente, la función App devuelve la estructura principal de la aplicación que incluye un componente de navegación que se muestra en todas las páginas excepto en la página de inicio. Las rutas están definidas en la función "Routes" de "react-router-dom" que carga el componente adecuado según la ruta actual.
+
+// Recordar que:
+// Los hooks son funciones especiales que te permiten "enganchar" o conectar la lógica de tu componente a ciertos comportamientos específicos.
+
+// En el caso de useEffect, te permite realizar efectos secundarios en tu componente en respuesta a ciertos cambios de estado. En este caso, el efecto secundario se activará cuando access cambie, y si access es falso, el componente navegará a la página principal.

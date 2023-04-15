@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../Styles/nav.css";
+import "../Styles/nav.css";   //  estilos de la barra de busquedad.
 
 export default function SearchBar({ onSearch }) {
   const [id, setId] = useState("");
@@ -8,7 +8,6 @@ export default function SearchBar({ onSearch }) {
     setId(event.target.value);
   };
 
-  // Ejercicio EXTRA 👇
   const addRandomCharacter = () => {
     const randomId = Math.floor(Math.random() * 826) + 1;
     onSearch(randomId);
@@ -43,7 +42,6 @@ export default function SearchBar({ onSearch }) {
         Add
       </button>
 
-      {/* Ejercicio EXTRA 👇 */}
       <button
         className="addRandom-btn"
         style={{ backgroundColor: "black" }}
@@ -54,5 +52,7 @@ export default function SearchBar({ onSearch }) {
     </nav>
   );
 }
+
+// El componente SearchBar es una barra de búsqueda que permite al usuario ingresar un ID de personaje y agregarlo a la lista de personajes que se están mostrando en pantalla. También hay un botón "Add Random" que agrega un personaje aleatorio a la lista.
 
 // .trim() es un método de JavaScript que elimina los espacios en blanco al inicio y al final de una cadena de texto.
