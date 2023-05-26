@@ -3,12 +3,16 @@
 import Card from "./Card";
 import { connect, useDispatch } from "react-redux";
 import { filterCards, orderCards } from "../redux/actions";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // La función Favorites recibe por props un array de personajes favoritos.
 function Favorites ({ myFavorites }) {
   const dispatch = useDispatch(); // hook useDispatch para acceder a la función dispatch de Redux.
   const [aux, setAux] = useState(false); // hook useState para crear un estado auxiliar y actualizamos su valor mediante la función setAux.
+
+  useEffect(() => {
+    console.log(myFavorites)
+  },[myFavorites])
 
   // la función handleOrder se encarga de llamar a la acción orderCards para ordenar los personajes favoritos según 
   // la opción seleccionada en el select.
