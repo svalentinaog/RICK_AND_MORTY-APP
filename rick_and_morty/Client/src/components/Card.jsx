@@ -22,9 +22,12 @@ function Card({
   // La función handleFavorite exclusiva de Card, maneja la adición/eliminación de personajes favoritos. Al hacer clic en ❤️ o 🤍, se cambia el estado de isFav. Si isFav es true, se llama a removeFav para eliminar el personaje de la lista de favoritos. De lo contrario, se llama a addFav para agregarlo. Esta función se declara en Card ya que es dónde se renderiza cada personaje.
   const handleFavorite = () => {
     if (isFav) {
+      console.log("Favoritooooo")
       setIsFav(false); // setIsFav, actualiza el estado (isFav) y se vuelve a renderizar el componente.
       removeFav(id);
+      
     } else {
+      console.log("NOO Favoritoooo")
       setIsFav(true);
       addFav({ id, name, species, gender, image, onClose });
     }

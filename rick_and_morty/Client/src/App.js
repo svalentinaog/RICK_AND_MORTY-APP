@@ -14,8 +14,9 @@ import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 // const API_KEY = "54a723701c95.c970f983b34a0bc36b17";
 
 // Credenciales que se utilizarán para la autenticación del usuario.
-const email = "valentina@gmail.com";
-const password = "jericho07";
+// const email = "valentina@gmail.com";
+// const password = "jericho07";
+const URL = 'http://localhost:3001/rickandmorty/login';
 
 // La función App es el componente principal que contiene el estado de la aplicación.
 function App() {
@@ -25,13 +26,43 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [access, setAccess] = useState(false); // Inicialmente, el estado de acceso está establecido en falso.
 
+  // LOGIN ANTERIOR ❌
   // La función login comprueba si las credenciales que el usuario ha ingresado son válidas y establece el estado de acceso en true si son correctas, y lleva al usuario a la página de inicio (/home) utilizando la función navigate.
-  const login = (userData) => {
-    if (userData.email === email && userData.password === password) {
-      setAccess(true);
-      navigate("/home");
-    } else {
-      alert("Credenciales incorrectas");
+  // const login = (userData) => {
+  //   if (userData.email === email && userData.password === password) {
+  //     setAccess(true);
+  //     navigate("/home");
+  //   } else {
+  //     alert("Credenciales incorrectas");
+  //   }
+  // };
+
+  // ☘️☘️☘️ Homework EXPRESS - LOGIN NUEVO 😉
+  // const login = (userData) => {
+
+  //   const { email, password } = userData;
+  //   const URL = "http://localhost:3001/rickandmorty/login/";
+
+  //   axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+  //     const { access } = data;
+  //     setAccess(data);
+  //     access && navigate("/home");
+  //   });
+  // };
+
+  // ☘️☘️☘️ Homework ASYNC-AWAIT - LOGIN NUEVO 😉
+  const login = async (userData) => {
+    try {
+      const { email, password } = userData;
+      const { data } = await axios(
+        URL + `?email=${email}&password=${password}`
+      );
+      const { access } = data;
+
+      setAccess(access);
+      access && navigate("/home");
+    } catch (error) {
+      console.log(error.message);
     }
   };
 
@@ -40,29 +71,57 @@ function App() {
     !access && navigate("/");
   }, [access]);
 
+  
+  // ONSEARCH ANTERIOR ❌
+  
   // La función onSearch utiliza la biblioteca axios para enviar una solicitud GET a la API externa con un id de personaje proporcionado por el usuario. Si la solicitud es exitosa, el personaje devuelto se agrega a la lista de personajes del estado de la aplicación. Si el personaje ya está en la lista, se muestra una alerta para notificar al usuario. Si no se encuentra ningún personaje con ese id, también se muestra una alerta. onSearch se definió en el componente App en lugar de en el componente SearchBar porque la acción que se realiza en la función onSearch afecta al estado de characters en App.
-  const onSearch = (id) => {
-    // url anterior: axios(`${URL_BASE}/${id}?key=${API_KEY}`) ❌
-    axios(`http://localhost:3001/rickandmorty/character/${id}`)
-      .then((response) => response.data)
-      .then((data) => {
-        if (data.name) {
-          // La función foundCharacter comprueba si el personaje que se está agregando ya está en la lista de personajes y evita que se agregue nuevamente.
-          const foundCharacter = characters.find(
-            // El método .find() se utiliza para buscar un elemento específico en un arreglo. Esta fn de devolución de llamada se ejecuta una vez para cada elemento en characters y compara el id de cada elemento con el id de data.
-            (character) => character.id === data.id
-          );
-          // Si se encuentra un personaje con el mismo id que el personaje devuelto por la API...
-          if (foundCharacter) {
-            window.alert("¡Este personaje ya se encuentra en la lista!");
-          } else {
-            setCharacters((oldChars) => [...oldChars, data]);
-          }
+  // const onSearch = (id) => {
+    
+  //   axios(`http://localhost:3001/rickandmorty/character/${id}`) // url anterior: axios(`${URL_BASE}/${id}?key=${API_KEY}`) ❌
+  //     .then((response) => response.data)
+  //     .then((data) => {
+  //       if (data.name) {
+  //         // La función foundCharacter comprueba si el personaje que se está agregando ya está en la lista de personajes y evita que se agregue nuevamente.
+  //         const foundCharacter = characters.find(
+  //           // El método .find() se utiliza para buscar un elemento específico en un arreglo. Esta fn de devolución de llamada se ejecuta una vez para cada elemento en characters y compara el id de cada elemento con el id de data.
+  //           (character) => character.id === data.id
+  //         );
+  //         // Si se encuentra un personaje con el mismo id que el personaje devuelto por la API...
+  //         if (foundCharacter) {
+  //           window.alert("¡Este personaje ya se encuentra en la lista!");
+  //         } else {
+  //           setCharacters((oldChars) => [...oldChars, data]);
+  //         }
+  //       } else {
+  //         window.alert("¡No hay personajes con este ID!");
+  //       }
+  //     });
+  // };
+
+
+  // ☘️☘️☘️ Homework ASYNC-AWAIT - ONSEARCH NUEVO 😉
+  const onSearch = async (id) => {
+    try {
+      const response = await axios(`http://localhost:3001/rickandmorty/character/${id}`);
+      const data = response.data;
+      
+      if (data.name) {
+        const foundCharacter = characters.find((character) => character.id === data.id);
+        
+        if (foundCharacter) {
+          window.alert("¡Este personaje ya se encuentra en la lista!");
         } else {
-          window.alert("¡No hay personajes con este ID!");
+          setCharacters((oldChars) => [...oldChars, data]);
         }
-      });
+      } else {
+        window.alert("¡No hay personajes con este ID!");
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
+  
+
 
   // La función onClose filtra la lista de personajes del estado de la aplicación para eliminar el personaje seleccionado.
   const onClose = (id) => {

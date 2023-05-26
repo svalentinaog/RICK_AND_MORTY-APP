@@ -7,9 +7,7 @@ import { useState } from "react";
 
 // La función Favorites recibe por props un array de personajes favoritos.
 function Favorites ({ myFavorites }) {
-
   const dispatch = useDispatch(); // hook useDispatch para acceder a la función dispatch de Redux.
-
   const [aux, setAux] = useState(false); // hook useState para crear un estado auxiliar y actualizamos su valor mediante la función setAux.
 
   // la función handleOrder se encarga de llamar a la acción orderCards para ordenar los personajes favoritos según 
