@@ -1,7 +1,12 @@
-import axios from 'axios';
+import axios from "axios";
 
 import { useState } from "react";
-import "../Styles/nav.css";   //  estilos de la barra de busquedad.
+import "../Styles/nav.css"; //  estilos de la barra de busquedad.
+
+//  ICONOS
+import "material-icons/iconfont/material-icons.css";
+import SearchIcon from "@mui/icons-material/Search";
+import AutoModeIcon from "@mui/icons-material/AutoMode";
 
 export default function SearchBar({ onSearch }) {
   const [id, setId] = useState("");
@@ -33,7 +38,6 @@ export default function SearchBar({ onSearch }) {
         console.log(error);
       });
   };
-  
 
   return (
     /* Cuando el usuario ingresa un ID de personaje y hace clic en el botón "Agregar", la función onSearch hace una solicitud a la API de Rick and Morty para obtener los detalles del personaje correspondiente y lo agrega a la lista de personajes que se están mostrando en pantalla. */
@@ -41,11 +45,12 @@ export default function SearchBar({ onSearch }) {
       <input
         className="inputAdd-btn"
         type="search"
-        placeholder="Id"
+        placeholder="Search Character"
         onChange={handleChange}
         value={id}
       />
 
+      {/* SEACRH CHARACTERS */}
       <button
         className="add-btn"
         onClick={() => {
@@ -61,15 +66,12 @@ export default function SearchBar({ onSearch }) {
           }
         }}
       >
-        Add
+        <SearchIcon />
       </button>
 
-      <button
-        className="addRandom-btn"
-        style={{ backgroundColor: "black" }}
-        onClick={addRandomCharacter}
-      >
-        Add Random
+      <button className="addRandom-btn" onClick={addRandomCharacter}>
+        <AutoModeIcon />
+        {/* Add Random */}
       </button>
     </nav>
   );

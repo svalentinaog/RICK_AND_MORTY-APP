@@ -16,7 +16,7 @@ import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 // Credenciales que se utilizarán para la autenticación del usuario.
 // const email = "valentina@gmail.com";
 // const password = "jericho07";
-const URL = 'http://localhost:3001/rickandmorty/login';
+const URL = "http://localhost:3001/rickandmorty/login";
 
 // La función App es el componente principal que contiene el estado de la aplicación.
 function App() {
@@ -50,6 +50,7 @@ function App() {
   //   });
   // };
 
+  console.log("Login");
   // ☘️☘️☘️ Homework ASYNC-AWAIT - LOGIN NUEVO 😉
   const login = async (userData) => {
     try {
@@ -71,12 +72,11 @@ function App() {
     !access && navigate("/");
   }, [access]);
 
-  
   // ONSEARCH ANTERIOR ❌
-  
+
   // La función onSearch utiliza la biblioteca axios para enviar una solicitud GET a la API externa con un id de personaje proporcionado por el usuario. Si la solicitud es exitosa, el personaje devuelto se agrega a la lista de personajes del estado de la aplicación. Si el personaje ya está en la lista, se muestra una alerta para notificar al usuario. Si no se encuentra ningún personaje con ese id, también se muestra una alerta. onSearch se definió en el componente App en lugar de en el componente SearchBar porque la acción que se realiza en la función onSearch afecta al estado de characters en App.
   // const onSearch = (id) => {
-    
+
   //   axios(`http://localhost:3001/rickandmorty/character/${id}`) // url anterior: axios(`${URL_BASE}/${id}?key=${API_KEY}`) ❌
   //     .then((response) => response.data)
   //     .then((data) => {
@@ -98,16 +98,20 @@ function App() {
   //     });
   // };
 
-
+  console.log("On search");
   // ☘️☘️☘️ Homework ASYNC-AWAIT - ONSEARCH NUEVO 😉
   const onSearch = async (id) => {
     try {
-      const response = await axios(`http://localhost:3001/rickandmorty/character/${id}`);
+      const response = await axios(
+        `http://localhost:3001/rickandmorty/character/${id}`
+      );
       const data = response.data;
-      
+
       if (data.name) {
-        const foundCharacter = characters.find((character) => character.id === data.id);
-        
+        const foundCharacter = characters.find(
+          (character) => character.id === data.id
+        );
+
         if (foundCharacter) {
           window.alert("¡Este personaje ya se encuentra en la lista!");
         } else {
@@ -120,8 +124,6 @@ function App() {
       console.error(error);
     }
   };
-  
-
 
   // La función onClose filtra la lista de personajes del estado de la aplicación para eliminar el personaje seleccionado.
   const onClose = (id) => {
@@ -147,14 +149,17 @@ function App() {
       <Routes>
         {/* Route representa una ruta de la aplicación. Su propiedad "path" define la ruta en la URL y "element" define el componente que se renderizará cuando la ruta especificada en "path" sea visitada. */}
         <Route path="/" element={<Form login={login} />} />
+
         <Route
           path="/home"
-          element={<Cards characters={characters} onClose={onClose} />}
           // El componente card recibe 2 props, characters que contiene información sobre los personajes que se van a mostrar en la página, y onClose es una función que se encarga de eliminar un personaje de la lista.
+          element={<Cards characters={characters} onClose={onClose} />}
         />
+
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
-        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/favorites" element={<Favorites onClose={onClose} />} />
+        
       </Routes>
     </div>
   );

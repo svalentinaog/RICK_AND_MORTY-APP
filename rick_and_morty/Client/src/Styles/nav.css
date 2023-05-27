@@ -3,25 +3,30 @@
   font-family: "Poppins", sans-serif;
 }
 
-
 /* ------------------------------------------- BUTTONS E INPUTS --------------------------------------------------- */
 
 .add-btn {
   background-color: #4eacac;
   color: white;
   border: none;
-  padding: 8px 16px;
+  /* padding: 3px 10px; */
+  padding: 9px 16px 1px 16px;
+
   border-radius: 0 4px 4px 0px;
   cursor: pointer;
-  margin-right: 8px;
+  margin-right: 16px;
+  /*Lupa*/
+  display: "flex";
+  align-items: center;
 }
 
 /* Input => Agregar */
 .inputAdd-btn {
+  /* width: 100px; */
   background-color: #65b6b1;
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 10px 16px;
   border-radius: 4px 0px 0px 4px;
 }
 
@@ -33,28 +38,36 @@
   box-shadow: 3px 0px 30px rgba(45, 54, 110, 0.4);
 }
 
+/* Arriba | Derecha | Abajo | Izquierda */
 /* Input => Agregar personaje ramdon*/
 .addRandom-btn {
   color: white;
   background-color: #333;
-  padding: 8px 16px;
   border-radius: 4px;
   border: 1px solid #4caf50;
+  padding: 7px 16px 1px 16px;
   cursor: pointer;
   transition: 0.1s ease all;
 }
 
-/* .addRandom-btn:hover {
-} */
+.addRandom-btn:hover {
+  background-color: #4caf50;
+  cursor: pointer;
+}
 
 /* Clase integrada en la etq nav */
 .buttonContainer {
-  padding: 12px;
   display: flex;
   justify-content: flex-end;
 }
 
-/* ABOUT - HOME */
+/* Links  | LOGO - ABOUT - HOME    ----------------------------------------------------------------------    */
+
+.logoHome-btn {
+  width: "200px";
+  height: "auto";
+}
+
 .about-btn {
   color: white;
   padding: 8px 16px;
@@ -63,6 +76,7 @@
   cursor: pointer;
   transition: 0.1s ease all;
 }
+
 .home-btn {
   color: white;
   padding: 8px 16px;
@@ -71,23 +85,43 @@
   cursor: pointer;
   transition: 0.1s ease all;
 }
-/* .log-out {
-  background: white;
-  color: #4caf50;
+
+.favorites-btn {
+  color: white;
   padding: 8px 16px;
   border-radius: 4px;
-  border: 1px solid #4caf50;
+  border: none;
   cursor: pointer;
   transition: 0.1s ease all;
-} */
+}
 
+/* Button | Log Out */
+.log-out {
+  color: white;
+  background-color: #333;
+  border-radius: 4px;
+  border: 1px solid #dc3545;
+  /* padding: 3px 16px; */
+  padding: 6px 16px 1px 16px;
 
+  border-radius: 4px;
+  /* border: none; */
+  cursor: pointer;
+  transition: 0.1s ease all;
+  /* Arriba | Derecha | Abajo | Izquierda */
+  margin: 0 15px 0 5px;
+}
+
+.log-out:hover {
+  background-color: #c82333;
+  cursor: pointer;
+}
 
 /* ------------------------------------------- NAVBAR --------------------------------------------------- */
 
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* ESPACIADO ENTRE LOS ELEMENTOS DEL NAVBAR*/
   align-items: center;
   background-color: #333;
   color: #fff;
@@ -107,19 +141,4 @@ nav div a {
 
 nav div a:hover {
   text-decoration: underline;
-}
-
-.log-out {
-  background-color: #dc3545;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-  transition: 0.1s ease all;
-}
-
-.log-out:hover {
-  background-color: #c82333;
-  cursor: pointer;
 }

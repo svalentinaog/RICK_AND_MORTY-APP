@@ -96,7 +96,7 @@ export const addFav = (character) => {
 };
 
 export const removeFav = (id) => {
-    console.log("HOLISSS")
+    console.log("Soy el removeFav")
     const endpoint = `http://localhost:3001/rickandmorty/fav/${id}`;
     return async (dispatch) => {
         try {

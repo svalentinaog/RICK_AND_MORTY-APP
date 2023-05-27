@@ -5,6 +5,8 @@ import { addFav, removeFav } from "../redux/actions"; // addFav y removeFav son 
 import { connect } from "react-redux"; // connect() es una función de Redux que se utiliza para conectar componentes de React con el store(tienda) de Redux.
 import { useState, useEffect } from "react";
 
+import FavoriteIcon from "@mui/icons-material/Favorite";
+
 // La función Card recibe recibe por props, información del personaje
 function Card({
   id,
@@ -22,14 +24,11 @@ function Card({
   // La función handleFavorite exclusiva de Card, maneja la adición/eliminación de personajes favoritos. Al hacer clic en ❤️ o 🤍, se cambia el estado de isFav. Si isFav es true, se llama a removeFav para eliminar el personaje de la lista de favoritos. De lo contrario, se llama a addFav para agregarlo. Esta función se declara en Card ya que es dónde se renderiza cada personaje.
   const handleFavorite = () => {
     if (isFav) {
-      console.log("Favoritooooo")
       setIsFav(false); // setIsFav, actualiza el estado (isFav) y se vuelve a renderizar el componente.
       removeFav(id);
-      
     } else {
-      console.log("NOO Favoritoooo")
       setIsFav(true);
-      addFav({ id, name, species, gender, image, onClose });
+      addFav({ id, name, species, gender, image, onClose }); 
     }
   };
 
@@ -41,7 +40,6 @@ function Card({
       }
     });
   }, [myFavorites]);
-
 
   // Se renderiza la información del personaje, incluyendo también un botón para agregar o quitar el personaje de la lista de favoritos, así como un botón para cerrar la tarjeta del personaje.
   return (
@@ -78,7 +76,17 @@ function Card({
         </div>
 
         <div>
-          <button onClick={handleFavorite}>{isFav ? "❤️" : "🤍"}</button>
+          {/* <button onClick={handleFavorite}>{isFav ? "❤️" : "🤍"}</button> */}
+          <button
+            onClick={handleFavorite}
+            style={{ backgroundColor: "transparent", border: "none" }}
+          >
+            {isFav ? (
+              <FavoriteIcon style={{ color: "red" }} />
+            ) : (
+              <FavoriteIcon style={{ color: "white" }} />
+            )}
+          </button>
         </div>
       </div>
     </div>
