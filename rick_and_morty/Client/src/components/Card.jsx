@@ -69,11 +69,14 @@ function Card({
           <h2>{gender}</h2>
         </div>
 
-        <div className="close-button-container">
-          <button className="close-button" onClick={() => onClose(id)}>
-            X
-          </button>
-        </div>
+        {/* renderizar o no cierto contenido basado en una condición. 😇 */}
+        {onClose && ( // Condicional para mostrar el botón "X" si onClose está definido 😇
+          <div className="close-button-container">
+            <button className="close-button" onClick={() => onClose(id)}>
+              X
+            </button>
+          </div>
+        )}
 
         <div>
           {/* <button onClick={handleFavorite}>{isFav ? "❤️" : "🤍"}</button> */}

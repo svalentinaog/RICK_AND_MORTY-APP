@@ -54,7 +54,7 @@ function Favorites({ myFavorites, onClose }) {
               species={fav.species}
               gender={fav.gender}
               image={fav.image}
-              onClose={onClose} // Pasamos la función onClose como prop
+              // onClose={onClose} // Pasamos la función onClose como prop
             />
           );
         })}

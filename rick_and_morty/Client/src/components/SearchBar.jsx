@@ -45,7 +45,7 @@ export default function SearchBar({ onSearch }) {
       <input
         className="inputAdd-btn"
         type="search"
-        placeholder="Search Character"
+        placeholder="Search Character by Id"
         onChange={handleChange}
         value={id}
       />
