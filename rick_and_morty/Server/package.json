@@ -6,8 +6,9 @@
     "test": "test"
   },
   "scripts": {
-    "start": "nodemon ./src/index.js"
-  },
+    "start": "nodemon ./src/index.js",
+    "test": "jest --detectOpenHandles"
+    },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -17,5 +18,9 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.22"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3"
+  }
 }

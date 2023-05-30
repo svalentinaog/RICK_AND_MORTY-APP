@@ -56,36 +56,51 @@
 
 // at(-1): Usamos el método at con el índice -1 para acceder al último elemento del array resultante. En otras palabras, estamos obteniendo el último segmento de la URL, que debería ser el ID del personaje.
 
+// //
+// // ☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️
+// //
+// // 😉👇 HOMEWORK - EXPRESS
+
+// const express = require("express");
+// const server = express();
+// const router = require("./routes/index");
+// const morgan = require("morgan");
+// const PORT = 3001;
+
+// // Crea un middleware que ejecute a express.json().
+// server.use(express.json());
+// server.use(morgan("dev"));
+
+// // MIDDLEWARE
+// server.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Credentials", "true");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+//   next();
+// });
+
+// // Crea un middleware que agregue el string "/rickandmorty" antes de cada una de tus rutas.
+// server.use("/rickandmorty", router);
+
+// server.listen(PORT, () => {
+//   console.log(`Server raised in port: ${PORT}`);
+// });
+
+
 //
 // ☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️☘️
 //
-// 😉👇 HOMEWORK - EXPRESS
+// 😉👇 HOMEWORK - TESTING
+// Pasamos todo al archivo nuevo app.js y este nos quedaria de esta manera:
 
-const express = require("express");
-const server = express();
-const router = require("./routes/index");
-const morgan = require("morgan");
+const server = require ("./app")
 const PORT = 3001;
-
-// Crea un middleware que ejecute a express.json().
-server.use(express.json());
-server.use(morgan("dev"));
-
-// MIDDLEWARE
-server.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
-  next();
-});
-
-// Crea un middleware que agregue el string "/rickandmorty" antes de cada una de tus rutas.
-server.use("/rickandmorty", router);
 
 server.listen(PORT, () => {
   console.log(`Server raised in port: ${PORT}`);
 });
+
