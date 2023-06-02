@@ -1,4 +1,3 @@
-// Importación de controladores
 const { login } = require("../controllers/login");
 const { getCharById } = require("../controllers/getCharById");
 const { postFav, deleteFav } = require("../controllers/handleFavorites");

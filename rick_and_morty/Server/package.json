@@ -10,7 +10,7 @@
     "test": "jest --detectOpenHandles"
     },
   "keywords": [],
-  "author": "",
+  "author": "Valentina Ortiz Gonzalez",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.4.0",
